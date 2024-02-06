@@ -14,23 +14,44 @@ PoolC와 Uxim의 합동 프로젝트 Frontend
 
 > ## Dependency
 
-### eslint + prettier 설치
+### eslint
 
-> ```
-> npm install -D eslint prettier
-> ```
+Next.js를 통해 eslint설치.
 
 ### airbnb eslint 설정
+
+#### 1. airbnb + 종속 패키지까지 설치하기
 
 > ```
 > npx install-peerdeps --dev eslint-config-airbnb
 > ```
 
-### prettier eslint 플러그인 및 설정
+#### 2. TypeScript 관련 airbnb, lint 패키지 설치하기
 
 > ```
->   npm install -D eslint-config-prettier eslint-plugin-prettier
+> npm install -D eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
 > ```
+
+### Prettier
+
+#### 설치 및 eslint와 충돌 관리
+
+> ```
+> npm install -D prettier eslint-plugin-prettier eslint-config-prettier
+> ```
+
+#### .prettierrc 파일 생성
+
+> ```JSON
+> {
+> "semi": false,
+> "singleQuote": true,
+> "tabWidth": 2,
+> "trailingComma": "all"
+> }
+> ```
+
+\* next.js에서는 세미콜론을 안 쓰다고 합니다.
 
 > ## Commit Convention
 
