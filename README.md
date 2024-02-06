@@ -11,47 +11,46 @@ PoolC와 Uxim의 합동 프로젝트 Frontend
 > ## Coding Convention
 
 - ### Airbnb: Eslint + Prettier
+- ## Setting
 
-> ## Dependency
+  ### eslint
 
-### eslint
+  Next.js를 통해 eslint설치.
 
-Next.js를 통해 eslint설치.
+  ### airbnb eslint 설정
 
-### airbnb eslint 설정
+  #### 1. airbnb + 종속 패키지까지 설치하기
 
-#### 1. airbnb + 종속 패키지까지 설치하기
+  > ```
+  > npx install-peerdeps --dev eslint-config-airbnb
+  > ```
 
-> ```
-> npx install-peerdeps --dev eslint-config-airbnb
-> ```
+  #### 2. TypeScript 관련 airbnb, lint 패키지 설치하기
 
-#### 2. TypeScript 관련 airbnb, lint 패키지 설치하기
+  > ```
+  > npm install -D eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
+  > ```
 
-> ```
-> npm install -D eslint-config-airbnb-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser
-> ```
+  ### Prettier
 
-### Prettier
+  #### 설치 및 eslint와 충돌 관리
 
-#### 설치 및 eslint와 충돌 관리
+  > ```
+  > npm install -D prettier eslint-plugin-prettier eslint-config-prettier
+  > ```
 
-> ```
-> npm install -D prettier eslint-plugin-prettier eslint-config-prettier
-> ```
+  #### .prettierrc 파일 생성
 
-#### .prettierrc 파일 생성
+  > ```JSON
+  > {
+  > "semi": false,
+  > "singleQuote": true,
+  > "tabWidth": 2,
+  > "trailingComma": "all"
+  > }
+  > ```
 
-> ```JSON
-> {
-> "semi": false,
-> "singleQuote": true,
-> "tabWidth": 2,
-> "trailingComma": "all"
-> }
-> ```
-
-\* next.js에서는 세미콜론을 안 쓰다고 합니다.
+  \* next.js에서는 세미콜론을 안 쓰다고 합니다.
 
 > ## Commit Convention
 
