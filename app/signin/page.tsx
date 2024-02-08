@@ -1,4 +1,4 @@
-import GoogleAcount from '../ui/google-acount'
+import GoogleAcount from '../ui/signin/google-acount'
 
 export default function Signin() {
   return (

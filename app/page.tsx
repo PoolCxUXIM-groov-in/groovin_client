@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import AuthContext from './ui/signin/authcontext'
+import GoogleAcount from './ui/signin/google-acount'
 
 export default function Home() {
   return (
