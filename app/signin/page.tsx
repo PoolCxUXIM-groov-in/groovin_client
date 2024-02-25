@@ -1,6 +1,6 @@
 import GoogleAcount from '../ui/signin/google-acount'
 
-export default function Signin() {
+export default function SignIn() {
   return (
     <>
       <div className=" text-[#54545E] h-screen w-screen flex flex-col items-center justify-center gap-14">
