@@ -13,7 +13,7 @@ export default function SkillForm() {
 
   return (
     <div>
-      <ul className="flex flex-col gap-5 w-1/2">
+      <ul className="flex flex-col gap-5">
         <li key="hardSkill" className=" col-start-1 row-start-1 col-span-1 row-span-1">
           <InputBox
             type="text"

@@ -54,8 +54,8 @@ export default function BasicForm() {
           </div>
         )}
       </div>
-      <ul className="flex flex-row justify-between">
-        <ul className="flex flex-col gap-5  items-between">
+      <ul className="flex flex-row justify-start gap-5">
+        <ul className="flex flex-col gap-5  items-between  w-[50%]">
           <li>
             <InputBox
               type="text"
@@ -81,7 +81,7 @@ export default function BasicForm() {
             />
           </li>
         </ul>
-        <ul className="flex flex-col gap-5 items-between">
+        <ul className="flex flex-col gap-5 items-between min-w-[340px] w-[50%]">
 
           <li>
             <InputBox
