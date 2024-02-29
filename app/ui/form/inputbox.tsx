@@ -1,4 +1,4 @@
-import { inter } from '@/app/ui/font/font'
+
 
 export interface inputBoxType {
   type: 'text' | 'number' | 'email' | 'url' | 'tel' | 'date'
@@ -19,9 +19,9 @@ export default function InputBox({
   description
 }: inputBoxType) {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2  max-w-[510px]">
       <div>
-        <label className={`${inter.className} flex flex-col gap-5 `} htmlFor={dataName}>
+        <label className={` flex flex-col gap-5 `} htmlFor={dataName}>
           <h3>{title}</h3>
           {description&&<p className=' text-sm   text-[#9999A2]'>{description}</p>}
         </label>
@@ -29,7 +29,7 @@ export default function InputBox({
       <input
         id={dataName}
         name={dataName}
-        className=" rounded-md text-[$454545] bg-[#F5FFFA] font-bold h-[56px] w-[340px] p-6 focus:bg-[#FFFFFF]  outline-[#28b070]"
+        className=" rounded-md text-[$454545] bg-[#F5FFFA] font-bold h-[56px] w-full p-6 focus:bg-[#FFFFFF]  outline-[#28b070]"
         type={type}
         placeholder={placeholder}
         defaultValue={defaultValue || ''}
@@ -37,3 +37,4 @@ export default function InputBox({
     </div>
   )
 }
+// input -> w-[340px]
