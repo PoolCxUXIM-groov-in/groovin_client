@@ -7,8 +7,11 @@ import SkillForm from "@/app/ui/signup/skill";
 import CareerForm from "@/app/ui/signup/career";
 import OthersForm from "@/app/ui/signup/othes";
 import Tab from "@/app/ui/tab/tab";
+import { useState } from "react";
 
 export default function Layout({children}:{children:React.ReactNode}){
+    const [activeTab, setActiveTab] = useState<"basic"|"skill"|"career"|"others">("basic");
+    
     return (
         <div className="flex flex-col p-10 gap-7 w-full">
         <section className="h-[10%] flex flex-col gap-7">
@@ -21,12 +24,17 @@ export default function Layout({children}:{children:React.ReactNode}){
         </section>
         <main className="flex flex-col gap-5">
             <div>
-                <Tab size="lg"/>
+                <Tab activeTab={activeTab} onTab={setActiveTab} size="lg"/>
                 <SplitLine />
             </div>
                 
-            <SkillForm/>
-            {/* <CareerForm/> */}
+            <div className='h-full flex flex-col justify-start overflow-scroll'/*' pt-7 pb-7'*/>
+                {activeTab==="basic" && <BasicForm />}
+                {activeTab==="skill" && <SkillForm/>}
+                {activeTab==="career"&& <CareerForm/>}
+                {activeTab==="others" &&<OthersForm/>}
+                
+            </div>
             <div className="flex flex-col gap-5">
                 <SplitLine />
                 <div className="flex flex-row gap-5">
