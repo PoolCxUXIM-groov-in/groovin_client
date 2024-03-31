@@ -11,9 +11,11 @@ import TeamSpaceContainer from '../ui/sidebar/teamSpaceContainer';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={` flex flex-row min-w-fit w-full  h-full  bg-white `}>
+    <div
+      className={` flex flex-row min-w-fit w-full    h-full overflow-clip   bg-white `}
+    >
       <div
-        className={`  grid grid-rows-[164px_3fr_164px] gap-7 p-7 w-[292px]  shadow-xl`}
+        className={`  grid grid-rows-[164px_3fr_164px] gap-7 p-7 w-[292px]    shadow-xl`}
       >
         <div className="  flex flex-col   gap-5 row-start-1">
           <div>
@@ -38,7 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
-      <div className="  w-full  ">{children}</div>
+      <div className="   w-full  overflow-scroll  ">{children}</div>
     </div>
   );
 }
