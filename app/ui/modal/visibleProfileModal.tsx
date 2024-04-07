@@ -41,13 +41,13 @@ export default function VisibleProfileModal({
             {/* </ul> */}
           </div>
           <SplitLine />
-          <div>
+          <div className="flex flex-row gap-5">
             <MainButton
               light={true}
               text="취소하기"
               width="md"
               action={() => {
-                onModalExist;
+                onModalExist('hidden');
               }}
             />
             <MainButton
@@ -55,7 +55,8 @@ export default function VisibleProfileModal({
               text=" 저장하기"
               width="md"
               action={() => {
-                onModalExist;
+                // visiblity설정
+                onModalExist('hidden');
               }}
             />
           </div>

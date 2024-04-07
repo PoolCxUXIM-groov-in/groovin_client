@@ -13,7 +13,7 @@ export default function ModalBase({
     <div
       id="modalBack"
       onClick={onModalExit}
-      className=" left-0 top-0  bg-[rgba(0,0,0,0.5)] backdrop-blur-lg  flex flex-col justify-center items-center absolute   w-full h-full "
+      className=" z-20 left-0 top-0  bg-[rgba(0,0,0,0.5)] backdrop-blur-lg  flex flex-col justify-center items-center absolute   w-full h-full "
     >
       <div
         onClick={(e) => {

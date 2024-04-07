@@ -8,8 +8,14 @@ import sideBell from '@/public/icons/Bell.svg';
 import sideInfo from '@/public/icons/Info square.svg';
 import sideLogout from '@/public/icons/Logout.svg';
 import TeamSpaceContainer from '../ui/sidebar/teamSpaceContainer';
-
+import { dummyData } from '../utils/dummy';
+import Toast from '../ui/toast-pop-up/toast';
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const teamInfo = dummyData.teamData.map((team) => ({
+    teamId: team.teamId,
+    teamName: team.teamName,
+    memNum: team.members.length,
+  }));
   return (
     <div
       className={` flex flex-row min-w-fit w-full    h-full overflow-clip   bg-white `}
@@ -22,13 +28,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Image src={mainLogo} width="150" height="32" alt="to main page" />
           </div>
           <div className="flex flex-col gap-3">
-            <SideTab icon={sideProfile} text="나의 프로필" />
+            <SideTab
+              href={'/main/profile'}
+              icon={sideProfile}
+              text="나의 프로필"
+            />
             <SideTab icon={sideBell} text="알림" />
           </div>
 
           <SplitLine />
         </div>
-        <TeamSpaceContainer />
+        <TeamSpaceContainer teamInfo={teamInfo} />
 
         <div className=" row-start-3 flex flex-col gap-5">
           <SplitLine />
@@ -40,7 +50,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
-      <div className="   w-full  overflow-scroll  ">{children}</div>
+      <div className="  w-full  overflow-y-scroll   ">{children}</div>
     </div>
   );
 }
