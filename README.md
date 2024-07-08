@@ -2,6 +2,12 @@
 
 PoolC와 Uxim의 합동 프로젝트 Frontend
 
+> ## Run
+
+```
+npm run dev
+```
+
 > ## Environment
 
 - ### Next.js
