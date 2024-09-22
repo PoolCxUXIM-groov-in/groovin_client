@@ -13,11 +13,11 @@ const defaultCareerInfo = {
   fileInfo: { name: '', file: '' },
 };
 export default function CareerModal({
-  onModalExit,
+  onModalExist,
   totalCareerInfos,
   addCareerInfos,
 }: {
-  onModalExit: () => void;
+  onModalExist: () => void;
   totalCareerInfos: object[];
   addCareerInfos: any;
 }) {
@@ -52,7 +52,7 @@ export default function CareerModal({
     }
   };
   return (
-    <ModalBase onModalExit={onModalExit}>
+    <ModalBase onModalExist={onModalExist}>
       <div className="flex flex-col items-center gap-7">
         <div className="flex flex-row justify-start w-full">
           <h3 className=" font-semibold text-lg">프로필 사진</h3>
@@ -137,7 +137,7 @@ export default function CareerModal({
         <div className=" w-full flex flex-row gap-7 justify-start">
           <MainButton
             action={() => {
-              onModalExit();
+              onModalExist();
               // setUploadedFile({ name: '', file: '' });
               setCareerInfo(defaultCareerInfo);
             }}
@@ -153,7 +153,7 @@ export default function CareerModal({
               // onEditImage(profileImage);
               addCareerInfos([...totalCareerInfos, careerInfo]);
               setCareerInfo(defaultCareerInfo);
-              onModalExit();
+              onModalExist();
             }}
           />
         </div>

@@ -79,8 +79,9 @@ export default function Tile({
               </section>
               {/* <SideMainButton text="초대하기" /> */}
               <button
-                onClick={(e) => {
-                  e.clipboardData.setData('url', 'www.google.com');
+                onClick={async (e) => {
+                  // e.clipboardData.setData('url', 'www.google.com');
+                  await navigator.clipboard.writeText('www.google.com');
                 }}
                 className=" text-sm  rounded-md w-[107px] h-[32px] bg-white text-[#54D99B] border-[#54D99B] border-2"
               >

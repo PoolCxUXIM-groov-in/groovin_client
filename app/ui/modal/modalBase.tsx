@@ -4,15 +4,15 @@ import { Dispatch, SetStateAction } from 'react';
 
 export default function ModalBase({
   children,
-  onModalExit,
+  onModalExist,
 }: {
   children: React.ReactElement;
-  onModalExit: () => void;
+  onModalExist: () => void;
 }) {
   return (
     <div
       id="modalBack"
-      onClick={onModalExit}
+      onClick={onModalExist}
       className=" z-20 left-0 top-0  bg-[rgba(0,0,0,0.5)] backdrop-blur-lg  flex flex-col justify-center items-center absolute   w-full h-full "
     >
       <div

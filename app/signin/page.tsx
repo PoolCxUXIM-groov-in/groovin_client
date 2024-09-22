@@ -1,4 +1,4 @@
-import GoogleAcount from '../ui/signin/google-acount'
+import GoogleAcount from '../ui/signin/google-acount';
 
 export default function SignIn() {
   return (
@@ -26,5 +26,5 @@ export default function SignIn() {
         </div>
       </div>
     </>
-  )
+  );
 }

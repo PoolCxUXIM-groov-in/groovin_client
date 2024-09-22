@@ -11,7 +11,7 @@ export default function PictureModal({
   prevImage,
 }: {
   onModalExit: () => void;
-  onEditImage: any;
+  onEditImage: (newImage: string | StaticImageData) => void;
   prevImage: any;
 }) {
   const [profileImage, setProfileImage] = useState<string | StaticImageData>(
@@ -29,7 +29,7 @@ export default function PictureModal({
     }
   };
   return (
-    <ModalBase onModalExit={onModalExit}>
+    <ModalBase onModalExist={onModalExit}>
       <div className="flex flex-col items-center gap-7">
         <div className="flex flex-row justify-start w-full">
           <h3 className=" font-semibold">프로필 사진</h3>
@@ -48,7 +48,7 @@ export default function PictureModal({
             }}
           >
             <Image
-              src={profileImage} //profileImage?.toString()}
+              src={profileImage?.toString()} //profileImage?.toString()}
               alt="profile image"
               width="392"
               height="392"

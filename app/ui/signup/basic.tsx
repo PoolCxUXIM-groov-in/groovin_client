@@ -138,6 +138,7 @@ export default function BasicForm({
         <ul className="flex flex-col gap-5 items-between w-[50%]">
           <li>
             <InputBox
+              placeholder=""
               type="date"
               dataName="birth"
               title="생년월일"

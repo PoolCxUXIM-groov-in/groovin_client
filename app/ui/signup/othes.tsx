@@ -6,7 +6,6 @@ import InputBox from '../form/inputbox';
 
 import Image from 'next/image';
 import { snsIcons } from '../common/sns';
-import { oneHot } from '@tensorflow/tfjs';
 const description = "콤마(',')로 구분해서 작성해주세요.";
 
 // const userInfo:{}={{title:"하드 스킬", description:description},{title:"소프트 스킬", description:description}}
@@ -88,7 +87,7 @@ export default function OthersForm({
   );
   const targetSns: string = clickedSnsList.length ? clickedSnsList[0] : ''; //.map(sns=>{if (snsState[sns].edit) return snsState[sns].name}));
 
-  const getSnsIcon: any = (sns: any) => {
+  const getSnsIcon: any = (sns: string) => {
     const targetSnsIcons =
       snsIcons[sns][othersInfo.sns[sns].url !== '' ? 'on' : 'off'][
         othersInfo.sns[sns].edit ? 'clicked' : 'normal'
@@ -140,7 +139,8 @@ export default function OthersForm({
                       <Image
                         id={sns}
                         onClick={(e) => {
-                          handleClickSns(e.target.id);
+                          // handleClickSns(String(e.target?.id ?? ''));
+                          // handleClickSns(String(e.target?.id ?? ''));
                         }}
                         className="w-[48] h-[48]"
                         src={snsStateIcon}

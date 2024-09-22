@@ -27,7 +27,7 @@ export default function CareerForm({
     <div className={` flex flex-col gap-5`}>
       <div className={`${visibleModal}`}>
         <CareerModal
-          onModalExit={() => {
+          onModalExist={() => {
             setVisibleModal('hidden');
           }}
           totalCareerInfos={totalCareerInfos}

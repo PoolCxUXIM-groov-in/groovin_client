@@ -14,7 +14,7 @@ export default function VisibleProfileModal({
     'basic' | 'skill' | 'career' | 'others'
   >('basic');
   return (
-    <ModalBase onModalClick={onModalExist}>
+    <ModalBase onModalExist={() => onModalExist('hidden')}>
       <div className="flex flex-col gap-5">
         <div className="flex flex-col">
           <p className=" font-bold text-[#54d99b]">PoolC</p>

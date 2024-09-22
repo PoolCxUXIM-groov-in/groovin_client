@@ -2,7 +2,13 @@ import { snsIcons } from '../common/sns';
 import Image from 'next/image';
 import Toggle from '../common/toggle';
 
-const dummyInfo: any = {
+const dummyInfo: {
+  [key: string]: Array<{
+    id: string;
+    title?: string;
+    content: string | string[];
+  }>;
+} = {
   basic: [
     { id: 'birth', title: '생년월일', content: '2000.01.01' },
     { id: 'phone', title: '휴대폰', content: '010-1234-5678' },
@@ -79,11 +85,12 @@ export default function TitleInfo({
             </div>
 
             <div className="flex flex-row flex-wrap gap-2">
-              {line.content.map((skill) => (
-                <div className=" pt-1 pb-1 pl-3 pr-3 rounded-2xl border-[#f0f0f0] border-2">
-                  {skill}
-                </div>
-              ))}
+              {typeof line.content !== 'string' &&
+                line.content.map((skill) => (
+                  <div className=" pt-1 pb-1 pl-3 pr-3 rounded-2xl border-[#f0f0f0] border-2">
+                    {skill}
+                  </div>
+                ))}
             </div>
           </li>
         ))}
@@ -91,13 +98,14 @@ export default function TitleInfo({
         dummyInfo[activeTab].map((line) => (
           <li className="flex flex-col gap-2 text-sm " key={line.id}>
             <div className="grid grid-cols-3 w-full  ">
-              {line.content.map((content) =>
-                line.id === 'default' ? (
-                  <h3 className="font-semibold">{content}</h3>
-                ) : (
-                  <p className="">{content}</p>
-                ),
-              )}
+              {typeof line.content !== 'string' &&
+                line.content.map((content) =>
+                  line.id === 'default' ? (
+                    <h3 className="font-semibold">{content}</h3>
+                  ) : (
+                    <p className="">{content}</p>
+                  ),
+                )}
             </div>
           </li>
         ))}
@@ -128,7 +136,11 @@ export default function TitleInfo({
             {(line.id === 'mbti' || line.id === 'interest') && (
               <div className="flex flex-row gap-2">
                 <h3 className="font-bold">{line.title}</h3>
-                <p>{...line.content}</p>
+                <p>
+                  {typeof line.content !== 'string'
+                    ? String(...line.content)
+                    : ''}
+                </p>
               </div>
             )}
 

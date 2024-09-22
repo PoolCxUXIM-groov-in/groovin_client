@@ -9,7 +9,7 @@ export default function NewTeamSpaceModal({
 }) {
   return (
     <ModalBase
-      onModalExit={() => {
+      onModalExist={() => {
         onModalExist('hidden');
       }}
     >

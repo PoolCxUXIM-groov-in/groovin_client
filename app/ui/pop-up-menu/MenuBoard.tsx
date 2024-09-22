@@ -12,7 +12,7 @@ import { usePathname } from 'next/navigation';
 const updateTeamName = () => {};
 const deleteTeam = () => {};
 const exitTeam = () => {};
-let timeid;
+let timeid: number | null;
 export default function MenuBoard({
   isLeader,
   info,

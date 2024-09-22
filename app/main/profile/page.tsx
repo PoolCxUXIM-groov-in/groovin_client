@@ -14,7 +14,7 @@ import {
   handleOthersData,
   handleSkillData,
 } from '@/app/utils/handleProfile';
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function Profile() {
   const [activeTab, setActiveTab] = useState<
     'basic' | 'skill' | 'career' | 'others'
   >('basic');
